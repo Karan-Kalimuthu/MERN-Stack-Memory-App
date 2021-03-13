@@ -1,10 +1,11 @@
 import React from 'react'
-
-const Post = () => {
+import useStyles from './styles';
+const Posts = () => {
+    const classes = useStyles();
     return (
-        <h1>POST</h1>
+        <h1>POSTS</h1>
     );
 }
 
 
-export default Post;
+export default Posts;
