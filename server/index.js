@@ -3,7 +3,13 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
+// const postRoutes = require('./routes/posts');
+
+const postRoutes = require('./routes/posts');
+
 const app = express();
+
+app.use('/posts', postRoutes);
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
@@ -23,4 +29,4 @@ mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: tr
         console.log('Not connected to DataBase');
         console.log(error.message);
     });
-// mongoose.set('useFindAndModify', false);
+mongoose.set('useFindAndModify', false);
